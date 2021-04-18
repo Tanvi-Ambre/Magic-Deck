@@ -1,7 +1,7 @@
 import {useContext, useEffect} from 'react';
 import {store} from '../store/store';
 import Cards from './Cards'
-import Button from '../components/Button'
+
 
 const Deck = () => {
     const {state, dispatch} = useContext(store);
@@ -13,13 +13,13 @@ const Deck = () => {
         <div className="Deck"> 
             <b> {"Deck"}</b>
             <br/>
-                <Button 
+                <button
                     onClick={()=>{
                         dispatch({type: "SHUFFLE_DECK", payload: state.deck})
                     }}
                 >
                     Shuffle
-                </Button>
+                </button>
 
                 <div className="card-container">
                     {state.deck.map((x, i) => (
