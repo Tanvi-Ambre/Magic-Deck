@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Controls from './components/Controls'
+import Deck from './components/Deck'
+//import CardContextProvider from './contexts/CardContext';
+import {StateProvider} from './store/store'
+//import Home from './Home';
+import Hand from './components/Hand'
 
 function App() {
+ // const title = "iX Cards Test"
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1 style = {{ 'textAlign': 'center'}}>iX Cards Test</h1>
+      <div className="main-wrapper">
+        <StateProvider>
+        
+            <Deck/>
+            <Controls/>
+            <Hand/>
+        </StateProvider>
+
+      </div>
     </div>
   );
 }
